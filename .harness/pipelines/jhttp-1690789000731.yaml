@@ -35,7 +35,7 @@ pipeline:
                   spec:
                     shell: Sh
                     command: |-
-                      |- echo "Welcome to Harness CI"
+                      echo "Welcome to Harness CI"
                         mvn -B package --file pom.xml
           platform:
             arch: Amd64
