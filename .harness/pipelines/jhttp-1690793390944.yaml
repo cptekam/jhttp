@@ -18,6 +18,15 @@ pipeline:
           execution:
             steps:
               - step:
+                  type: Run
+                  name: Build Java App
+                  identifier: Build_Java_App
+                  spec:
+                    shell: Sh
+                    command: |-
+                      echo "Welcome to Harness CI"
+                      mvn -B package --file pom.xml
+              - step:
                   identifier: dockerbuild
                   name: docker_build
                   spec:
