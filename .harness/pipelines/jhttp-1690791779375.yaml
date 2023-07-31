@@ -28,6 +28,15 @@ pipeline:
                       tags: latest
                   timeout: ""
                   type: Plugin
+              - step:
+                  type: Run
+                  name: Build Java App
+                  identifier: Build_Java_App
+                  spec:
+                    shell: Sh
+                    command: |-
+                      echo "Welcome to Harness CI"
+                      mvn -B package --file pom.xml
           platform:
             os: Linux
             arch: Amd64
