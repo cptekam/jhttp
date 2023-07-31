@@ -30,10 +30,11 @@ pipeline:
                   identifier: dockerbuild
                   name: docker_build
                   spec:
+                    connectorRef: account.harnessImage
                     image: plugins/docker
                     settings:
                       dry_run: "true"
-                      repo: hello/world
+                      repo: <+input>
                       tags: latest
                   timeout: ""
                   type: Plugin
