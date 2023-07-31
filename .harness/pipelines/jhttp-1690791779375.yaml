@@ -26,17 +26,6 @@ pipeline:
                     command: |-
                       echo "Welcome to Harness CI"
                       mvn -B package --file pom.xml
-              - step:
-                  identifier: dockerbuild
-                  name: docker_build
-                  spec:
-                    image: plugins/docker
-                    settings:
-                      dry_run: "true"
-                      repo: hello/world
-                      tags: latest
-                  timeout: ""
-                  type: Plugin
           platform:
             os: Linux
             arch: Amd64
