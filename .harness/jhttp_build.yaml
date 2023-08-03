@@ -27,6 +27,15 @@ pipeline:
           execution:
             steps:
               - step:
+                  type: Run
+                  name: Run_project
+                  identifier: Run_project
+                  spec:
+                    shell: Sh
+                    command: |-
+                      echo "Welcome to Harness CI"
+                      mvn -B package --file pom.xml
+              - step:
                   type: BuildAndPushDockerRegistry
                   name: BuildAndPushDockerRegistry_1
                   identifier: BuildAndPushDockerRegistry_1
